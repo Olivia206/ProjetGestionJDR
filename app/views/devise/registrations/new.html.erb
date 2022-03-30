@@ -1,0 +1,12 @@
+<h2>Sign up</h2>
+
+<%= simple_form_for resource, as: resource_name, url: registration_path(resource_name) do |f| %>
+  <%= render "devise/shared/error_messages", resource: resource %>
+  <%= f.input :pseudo, label: 'Pseudo', error: 'Pseudo is mandatory, please specify one' %>
+  <%= f.input :password, hint: 'No special characters.' %>
+  <%= f.input :email, placeholder: 'user@domain.com' %>
+  <%= f.input :remember_me, inline_label: 'Yes, remember me', as: :radio_buttons %>
+  <%= f.submit 'Inscription' %>
+<% end %>
+
+<%= render "devise/shared/links" %>
