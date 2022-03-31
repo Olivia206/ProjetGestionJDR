@@ -1,0 +1,62 @@
+<header class="header_perso">
+  <div class="header_illustration">
+    <%= image_tag 'fond_png.png', alt: 'bannière du site' %>
+  </div>
+  <div class="header_profile">
+    <h1>
+      <%= @character.prenom %> <%= @character.nom %>
+      <span><%= @character.prenom %> <%= @character.nom %></span>
+    </h1>
+    <div>
+      <h2>Créé.e par @ le <%= @character.published_at %></h2>
+      <%= link_to 'Edit', edit_character_path(@character) %>
+    </div>
+  </div>
+</header>
+
+<div id="main">
+
+  <div class="character_view">
+    <div class="chara_head">
+      <div class="chara_infos">
+        <span><b>Surnom :</b> <%= @character.surnom %></span>
+        <span><b>Âge :</b> <%= @character.age %></span>
+        <span><b>Sexe :</b> <%= @character.sexe %></span>
+        <span><b>Race :</b> <%= @character.race %></span>
+        <span><b>Monde :</b> <%= @character.monde %></span>
+        <span><b>Origine :</b> <%= @character.origine %></span>
+        <span><b>Classe / métier :</b> <%= @character.classe %></span>
+      </div>
+      <div class="chara_avatar">
+        <img src="<%= @character.avatar %>">
+      </div>
+    </div>
+    <div class="chara_stats">
+      <div class="pv"><b><%= @character.pv %></b></div>
+      <div class="pm"><b><%= @character.pm %></b></div>
+      <div class="des"><b><%= @character.destin %></b></div>
+    </div>
+    <div class="chara_about">
+
+      <div class="chara_histoire">
+        <h3>Histoire</h3>
+        <div class="histoire_cont"><%= @character.histoire %></div>
+      </div>
+      <div class="chara_compet">
+      <h3>Compétences</h3>
+        <div class="compet_cont">
+          <%= @character.competences %>
+        </div>
+      </div>
+    </div>
+    <div class="chara_bottom">
+      <div class="chara_invent">
+        <div class="invent_cont">
+          <%= @character.inventaire %>
+        </div>
+      </div>
+      <div class="chara_bann" style="background-image: url('<%= @character.hero %>');"></div>
+    </div>
+  </div>
+
+</div>

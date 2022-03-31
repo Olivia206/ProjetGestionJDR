@@ -1,0 +1,30 @@
+
+<%= simple_form_for(@character) do |f| %>
+  <%= f.error_notification %>
+  <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
+
+  <div class="form-inputs">
+    <%= f.input :prenom %>
+    <%= f.input :nom %>
+    <%= f.input :surnom %>
+    <%= f.input :avatar %>
+    <%= f.input :hero %>
+    <%= f.input :age %>
+    <%= f.input :sexe %>
+    <%= f.input :monde %>
+    <%= f.input :race %>
+    <%= f.input :origine %>
+    <%= f.input :classe %>
+    <%= f.input :pv %>
+    <%= f.input :pm %>
+    <%= f.input :destin %>
+    <%= f.input :histoire %>
+    <%= f.input :competences %>
+    <%= f.input :inventaire %>
+    <%= f.input :published_at %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>

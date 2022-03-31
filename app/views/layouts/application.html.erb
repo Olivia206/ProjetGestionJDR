@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>ProjetRubyCollege</title>
+    <title>Roll your chara</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
@@ -9,6 +9,25 @@
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
+
+  <div id="navigation_bar">
+    <a href="/">Accueil</a>
+    <div class="nav_links">
+      <%= link_to 'Membres', users_path %>
+      <% if current_user %>
+        <div class="links_connected">
+          <%= link_to current_user.pseudo, user_show_path %>
+          <%= link_to 'éditer ton profil', edit_user_registration_path %>
+          <%= button_to "logout", destroy_user_session_path, method: :delete  %>
+        </div>
+        <% else %>
+        <div class="links_notconnected">
+          <%= button_to new_user_session_path, class: 'login-button' do %>se connecter<% end %>
+          <%= button_to new_user_registration_path, class: 'signup-button' do %>S'inscrire<% end %>
+        </div>
+      <% end %>
+    </div>
+  </div>
 
   <body>
     <%= yield %>

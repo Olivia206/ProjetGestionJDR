@@ -1,0 +1,388 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;800&family=Roboto+Mono:wght@400;500;700&display=swap');
+
+/***** VARIABLES *****/
+
+$bleu:#2b3653;
+$violet: #806c8a;
+$rose: #d8a8a4;
+$marron: #70493e;
+$orange: #ea754a;
+$blanc: #f4f5f5;
+
+$fontTitle: 3rem 'Roboto Mono';
+$fontText: 1rem 'Poppins';
+
+/***** GENERALITES *****/
+*, ::before, ::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  outline: none;
+}
+a, a:hover {
+  text-decoration: none;
+}
+
+html {
+  scroll-behavior: smooth;
+  font: $fontText;
+
+  #navigation_bar {
+    display:flex;
+    align-items:center;
+    justify-content: space-between;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 60px;
+    background-color: $blanc;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    z-index: 999;
+    padding: 0 20px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: #444;
+
+    a {
+      color: #444;
+    }
+
+    .nav_links {
+      display:flex;
+      align-items: center;
+
+      a {
+        margin-right: 40px;
+      }
+      span {
+        margin-right: 40px;
+      }
+
+      input, button {
+        border:none;
+        font: $fontText;
+        padding: 5px 20px;
+        border-radius: 20px;
+        color:$blanc;
+        cursor: pointer;
+        letter-spacing: 1px;
+      }
+      .links_connected {
+        display:flex;
+        align-items: center;
+        input {
+          background-color: $bleu;
+          margin-left: 40px;
+        }
+      }
+      .links_notconnected {
+        display:flex;
+        button {
+          background-color: $orange;
+        }
+        form:nth-child(1) button {
+          background-color: $rose;
+          margin-right: 20px;
+        }
+      }
+    }
+  }
+  body {
+    background-color: $blanc;
+
+    header {
+      display:flex;
+      align-items: center;
+      justify-content: space-around;
+      position:relative;
+      width: 100%;
+      padding: 60px 0;
+      height: 100vh;
+      color: $blanc;
+      overflow:hidden;
+
+      &.header_perso {
+        height: 80vh;
+
+        .header_profile {
+          display:flex;
+          align-items: center;
+          justify-content: space-between;
+
+          h1 {
+            position: relative;
+            display: flex;
+            align-items: center;
+            font-size: 4rem;
+            span {
+              color: transparent;
+              -webkit-text-stroke: 0.5px $blanc;
+              position: absolute;
+              top: -10px;
+              right: -10px;
+              width: 100%;
+              opacity: .5;
+              white-space: nowrap;
+            }
+          }
+          div {
+            width: 33.33%;
+            display:flex;
+            flex-direction: column;
+            align-items: flex-end;
+            h2 {
+              text-align: right;
+            }
+              a {
+                background: $bleu;
+                color: $blanc;
+                font: $fontText;
+                padding: 5px 20px;
+                border-radius: 20px;
+              }
+          }
+        }
+      }
+
+      .header_illustration {
+        position:absolute;
+        top: 0;
+        right: 0;
+        left: 0;
+        bottom: 0;
+        z-index: 1;
+        display:flex;
+        align-items: center;
+        justify-content: center;
+
+        img {
+          width: 100%;
+          position:fixed;
+        }
+      }
+      .header_title {
+        position: relative;
+        z-index: 2;
+        width: 20vw;
+        height: 20vw;
+        border: 4px solid $blanc;
+        transform: rotate(45deg);
+        overflow: hidden;
+
+        img {
+          height: 10vw;
+          position:absolute;
+          opacity: .3;
+          bottom: -20px;
+          left: -20px;
+          transform: rotate(-45deg);
+        }
+
+        h1 {
+          display: flex;
+          align-items: stretch;
+          justify-content: flex-end;
+          height: 100%;
+
+          b {
+            font-size: 2.5rem;
+            white-space: nowrap;
+            text-transform: uppercase;
+            position:absolute;
+            top: -16px;
+            right: 0;
+            left: -3px;
+            letter-spacing: 6.5px;
+            text-align: center;
+          }
+          span {
+            writing-mode: vertical-rl;
+            transform: rotate(180deg);
+            font-style: italic;
+            font-size: 4rem;
+            position:relative;
+            text-transform: lowercase;
+            line-height: 2.5rem;
+
+            &::before {
+              color: transparent;
+              -webkit-text-stroke: 0.5px $blanc;
+              position: absolute;
+              top: 20px;
+              right:-10px;
+              content: "chara";
+              pointer-events: none;
+            }
+          }
+        }
+      }
+      .header_desc {
+        position: relative;
+        z-index: 2;
+        background: rgba(244, 245, 245,.2);
+        padding: 40px;
+        width: 40%;
+        border-radius: 20px;
+      }
+      .header_profile {
+        position: relative;
+        z-index: 2;
+      }
+    }
+    #main {
+      position:relative;
+      z-index:3;
+      background: $blanc;
+      border-top-left-radius: 20px;
+      border-top-right-radius: 20px;
+      margin-top: -60px;
+      padding: 60px;
+
+      section {
+
+        h3 {
+
+
+        }
+        .advantages {
+          display:flex;
+          justify-content: space-around;
+
+          .card {
+
+          }
+        }
+      }
+      .character_view {
+        .chara_head {
+          display:flex;
+          justify-content:space-between;
+          position:relative;
+
+          .chara_infos {
+            flex:1;
+
+            span {
+              display:block;
+
+              b {
+                font-family: 'Roboto Mono';
+                color: $orange;
+              }
+            }
+          }
+          .chara_avatar {
+            margin-top: -150px;
+            border-radius: 20px;
+            border: 20px solid $blanc;
+            background: $blanc;
+
+            img {
+              border-radius: 20px;
+              max-width: 400px;
+            }
+          }
+        }
+        .chara_stats {
+          display:flex;
+          align-items: center;
+          justify-content: space-around;
+          margin: 40px 0;
+
+          b {
+            font-family: 'Roboto Mono';
+            font-size: 3rem;
+            color: $orange;
+            position:relative;
+
+            &::before {
+              content:"PV";
+              color: $marron;
+              opacity: .4;
+              position: absolute;
+              right: -20px;
+              top: -20px;
+              font-weight: 900;
+              font-family: Poppins;
+              font-size: 2rem;
+              letter-spacing: 3px;
+            }
+          }
+          .pv b::before {
+              content: "PM";
+            }
+          .des b::before {
+              content:"DESTIN";
+            }
+        }
+        .chara_about {
+          display:flex;
+
+          .chara_histoire, .chara_compet {
+            flex:1;
+          }
+          h3::before, h3::after {
+            height: 2px;
+            background-color: $orange;
+            flex:1;
+          }
+          .chara_histoire {
+            margin-right: 20px;
+            h3::after {
+              content:"";
+              margin-left: 20px;
+            }
+          }
+          .chara_compet {
+            margin-left:20px;
+            h3::before {
+              content:"";
+              margin-right: 20px;
+            }
+          }
+        }
+        h3 {
+          font-family: 'Poppins';
+          font-size: 3rem;
+          font-weight: 900;
+          font-style: italic;
+          color: $rose;
+          display: flex;
+          align-items: center;
+          width:100%;
+
+          &::first-letter {
+            color: $orange;
+          }
+        }
+        .chara_bottom {
+          display: flex;
+          margin-top: 60px;
+
+          .chara_invent {
+            flex:1;
+            margin-right: 20px;
+
+            .invent_cont {
+              background: #fff;
+              border-radius: 20px;
+              border: 10px solid transparent;
+              overflow:auto;
+              height: 300px;
+              padding: 10px;
+            }
+          }
+          .chara_bann {
+            flex:1;
+            margin-left: 20px;
+            background-image: center;
+            border-radius: 20px;
+          }
+
+        }
+      }
+    }
+  }
+}
