@@ -586,7 +586,75 @@ html {
           }
         }
       }
+      &.chara_list {
+        display:flex;
+        flex-wrap: wrap;
+        padding: 40px;
 
+        .character {
+          margin: 20px;
+          background: $rose;
+          border-radius: 20px;
+          margin-bottom:80px;
+          padding: 20px;
+          width: calc(50% - 40px);
+          display:flex;
+          align-items:center;
+          justify-content: space-between;
+          background: linear-gradient(142deg, $rose 0%, $violet 28%, $bleu 100%);
+          color: $blanc;
+
+          .chara_avatar {
+            height: 120px;
+            width: 120px;
+            background-position: 50% 30%;
+            background-size: cover;
+            border-radius:15px;
+          }
+
+          .chara_infos {
+            text-align:center;
+            flex:1;
+            display:flex;
+            flex-direction: column;
+            align-items:center;
+            margin: 0 40px;
+
+            a {
+              display:block;
+              color: $blanc;
+              font-family: 'Roboto Mono';
+              font-size: 1.5rem;
+              margin-bottom: 10px;
+              transition: ease .3s;
+            }
+          }
+          .chara_actions {
+            display:flex;
+            flex-direction: column;
+            height: 100%;
+            justify-content: space-around;
+
+            a {
+              color: $blanc;
+              font-family: 'Roboto Mono';
+              font-size: .8rem;
+              border: 2px solid $blanc;
+              border-radius: 5px;
+              margin-bottom: 10px;
+              padding: 5px 10px;
+              text-align:center;
+              transition: ease .3s;
+
+              &:hover {
+                background: rgba(244,245,245,.2);
+                transition: ease .3s;
+              }
+            }
+          }
+
+        }
+      }
     }
   }
 }
