@@ -10,26 +10,29 @@
       <%= link_to "Supprimer ton compte", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %>
     </div>
 
-    <%= simple_form_for resource, as: resource_name, url: registration_path(resource_name), html: { method: :put } do |f| %>
-      <div>
-        <%= f.input :pseudo, label: 'Ton pseudo', autofocus: true, autocomplete: "pseudo" %>
-        <%= f.input :email, autofocus: true, autocomplete: "email" %>
-        <%= f.input :password, autocomplete: "new-password", hint: 'Laisse vide si tu ne veux pas le changer' %>
-        <% if @minimum_password_length %>
-        <small class="form-text text-muted">
-          <i><%= @minimum_password_length %> characters minimum</i>
-        </small>
-        <% end %>
-        <%= f.input :password_confirmation, hint: 'No special characters.', autocomplete: "new-password" %>
+    <div class="form_log">
 
-      </div>
-      <div class="form_pass">
-        <%= f.input :current_password, hint: 'we need your current password to confirm your changes.', autocomplete: "current-password" %>
-        <div class="form_links">
-          <%= f.submit 'Enregistrer les modifications' %>
+      <%= simple_form_for resource, as: resource_name, url: registration_path(resource_name), html: { method: :put } do |f| %>
+        <div>
+          <%= f.input :pseudo, label: 'Ton pseudo', autofocus: true, autocomplete: "pseudo" %>
+          <%= f.input :email, autofocus: true, autocomplete: "email" %>
+          <%= f.input :password, autocomplete: "new-password", hint: 'Laisse vide si tu ne veux pas le changer' %>
+          <% if @minimum_password_length %>
+          <small class="form-text text-muted">
+            <i><%= @minimum_password_length %> characters minimum</i>
+          </small>
+          <% end %>
+          <%= f.input :password_confirmation, hint: 'No special characters.', autocomplete: "new-password" %>
+
         </div>
-      </div>
-    <% end %>
+        <div class="form_pass">
+          <%= f.input :current_password, hint: 'we need your current password to confirm your changes.', autocomplete: "current-password" %>
+          <div class="form_links">
+            <%= f.submit 'Enregistrer les modifications' %>
+          </div>
+        </div>
+      <% end %>
+    </div>
 </div>
 </header>
 

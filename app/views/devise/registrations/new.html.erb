@@ -6,19 +6,22 @@
     <h1>
       Inscription
     </h1>
-
+    <div class="form_log">
       <%= simple_form_for resource, as: resource_name, url: registration_path(resource_name) do |f| %>
         <div>
           <%= render "devise/shared/error_messages", resource: resource %>
           <%= f.input :pseudo, label: 'Pseudo', error: 'Pseudo is mandatory, please specify one' %>
           <%= f.input :email, placeholder: 'user@domain.com' %>
           <%= f.input :password, hint: 'No special characters.' %>
+          <%= f.input :password_confirmation, autocomplete: "new-password" %>
         </div>
         <div class="form_links">
           <%= f.submit 'Inscription' %>
-          <%= render "devise/shared/links" %>
         </div>
       <% end %>
-
+      <div class="out_form_links insc">
+        <%= render "devise/shared/links" %>
+      </div>
+    </div>
   </div>
 </header>

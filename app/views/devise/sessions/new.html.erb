@@ -7,12 +7,12 @@
       Connexion
     </h1>
 
+    <div class="form_log">
       <%= simple_form_for resource, as: resource_name, url: session_path(resource_name) do |f| %>
         <div>
           <%= render "devise/shared/error_messages", resource: resource %>
           <%= f.input :email, autofocus: true, autocomplete: "email" %>
-          <%= f.input :password, autocomplete: "new-password" %>
-          <%= f.input :password_confirmation, hint: 'No special characters.', autocomplete: "new-password" %>
+          <%= f.input :password, autocomplete: "current-password" %>
 
           <% if devise_mapping.rememberable? %>
             <div class="field">
@@ -22,10 +22,12 @@
         <% end %>
         </div>
         <div class="form_links">
-          <%= f.submit 'Connexion' %>
-          <%= render "devise/shared/links" %>
+          <%= f.submit 'Inscription' %>
         </div>
       <% end %>
-
+      <div class="out_form_links">
+        <%= render "devise/shared/links" %>
+      </div>
+    </div>
   </div>
 </header>

@@ -5,13 +5,14 @@
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
+    <%= favicon_link_tag 'favicon.png' %>
 
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <div id="navigation_bar">
-    <a href="/">Accueil</a>
+    <a href="/"><%= image_tag 'logo_flat.svg', alt: 'logo dé de jeu de rôle' %></a>
     <div class="nav_links">
       <%= link_to 'Membres', users_path %>
       <% if current_user %>
