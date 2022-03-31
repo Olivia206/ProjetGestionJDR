@@ -118,7 +118,27 @@ html {
       }
 
       /***** INSCRIPTION / CONNEXION *****/
+      .header_btn{
+        display:flex;
+        flex-direction: column;
+        align-items: flex-start;
 
+        h1 {
+          text-align: center;
+          margin-bottom: 20px;
+        }
+        a {
+          font-size: 16px;
+          font-family: 'Poppins';
+          padding: 5px 20px;
+          border-radius: 20px;
+          background: $bleu;
+          color:$blanc;
+          cursor: pointer;
+          letter-spacing: 1px;
+          text-align: center;
+        }
+      }
       .header_logs {
         position: relative;
         z-index: 2;
@@ -127,24 +147,6 @@ html {
         justify-content: space-around;
         width: 100%;
 
-        .header_btn{
-          h1 {
-            text-align: center;
-            margin-bottom: 20px;
-          }
-          a {
-            font-size: 16px;
-            font-family: 'Poppins';
-            padding: 5px 20px;
-            border-radius: 20px;
-            background: $bleu;
-            color:$blanc;
-            cursor: pointer;
-            letter-spacing: 1px;
-            width: 100%;
-            text-align: center;
-          }
-        }
         .form_log {
           display:flex;
           flex-direction:column;
