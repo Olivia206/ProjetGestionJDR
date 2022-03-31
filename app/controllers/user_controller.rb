@@ -1,6 +1,7 @@
 class UserController < ApplicationController
   def index
     @user = current_user
+    @user = User.find(params[:id])
     @users = User.all
   end
 
@@ -9,6 +10,7 @@ class UserController < ApplicationController
   end
 
   def show
+
   end
 
   def edit
@@ -16,6 +18,7 @@ class UserController < ApplicationController
 
   def create
     @user = User.new(params[:id])
+
     if @user.save
       session[:user_id] = @user.id
       flash[:notice] = "Thank you for signing up! You are now logged in."

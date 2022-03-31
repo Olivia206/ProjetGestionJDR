@@ -16,6 +16,7 @@
       <%= link_to 'Membres', users_path %>
       <% if current_user %>
         <div class="links_connected">
+          <%= link_to current_user.pseudo, current_user %>
           <%= link_to 'éditer ton profil', edit_user_registration_path %>
           <%= button_to "logout", destroy_user_session_path, method: :delete  %>
         </div>

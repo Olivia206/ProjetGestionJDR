@@ -11,7 +11,8 @@
         <div>
           <%= render "devise/shared/error_messages", resource: resource %>
           <%= f.input :email, autofocus: true, autocomplete: "email" %>
-          <%= f.input :password, autocomplete: "current-password" %>
+          <%= f.input :password, autocomplete: "new-password" %>
+          <%= f.input :password_confirmation, hint: 'No special characters.', autocomplete: "new-password" %>
 
           <% if devise_mapping.rememberable? %>
             <div class="field">
@@ -21,7 +22,7 @@
         <% end %>
         </div>
         <div class="form_links">
-          <%= f.submit 'Inscription' %>
+          <%= f.submit 'Connexion' %>
           <%= render "devise/shared/links" %>
         </div>
       <% end %>

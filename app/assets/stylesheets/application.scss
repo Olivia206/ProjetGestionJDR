@@ -113,9 +113,24 @@ html {
         justify-content: space-around;
         width: 100%;
 
-        h1 {
-          font-size: 4rem;
-          text-align: center;
+        .header_btn{
+          h1 {
+            font-size: 4rem;
+            text-align: center;
+            margin-bottom: 20px;
+          }
+          a {
+            font-size: 16px;
+            font-family: 'Poppins';
+            padding: 5px 20px;
+            border-radius: 20px;
+            background: $bleu;
+            color:$blanc;
+            cursor: pointer;
+            letter-spacing: 1px;
+            width: 100%;
+            text-align: center;
+          }
         }
         form {
           display:flex;
@@ -132,22 +147,24 @@ html {
             flex-direction: column;
             flex:1;
           }
+          input {
+            border: none;
+            background-color: $blanc;
+            padding: 3px 10px;
+            font-family: Poppins;
+            border-radius: 5px;
+            width: 100%;
+          }
           .form-group {
             display:flex;
             flex-direction:column;
             align-items:flex-start;
+            margin-top: 10px;
+            &:first-child { margin: 0;}
 
             small {
               font-style: italic;
               font-size: .7rem;
-            }
-            input {
-              border: none;
-              background-color: $blanc;
-              padding: 3px 10px;
-              font-family: Poppins;
-              border-radius: 5px;
-              width: 100%;
             }
           }
           .form_links {
@@ -175,12 +192,34 @@ html {
               margin-bottom: 20px;
             }
           }
+          .form_pass {
+            margin-left: 40px;
+            display:flex;
+            align-items:center;
+            justify-content:space-around;
+            flex: 0.7;
+
+            .form_links {
+              margin: 0;
+              flex: unset;
+            }
+          }
           .field {
             flex-direction: row;
             align-items: center;
             margin-top: 20px;
             input {
               margin-right: 10px;
+            }
+          }
+        }
+        &.edit {
+          form {
+            align-items: unset;
+            .form_links {
+              input:nth-child(3) {
+                background: $bleu;
+              }
             }
           }
         }
@@ -191,8 +230,10 @@ html {
 
         .header_profile {
           display:flex;
-          align-items: center;
+          align-items: flex-start;
           justify-content: space-between;
+          flex-direction:column;
+          width: 80%;
 
           h1 {
             position: relative;
@@ -466,6 +507,30 @@ html {
 
         }
       }
+      &.member_list {
+        display:flex;
+        flex-wrap: wrap;
+        padding: 40px;
+
+        .member {
+          margin: 20px;
+          background: $rose;
+          border-radius: 20px;
+          margin-bottom:80px;
+          height: 80px;
+          width: calc(25% - 40px);
+          display:flex;
+          align-items:center;
+          justify-content: center;
+
+          a {
+            color: $blanc;
+            font-family: 'Roboto Mono';
+            font-size: 1.5rem;
+          }
+        }
+      }
+
     }
   }
 }
