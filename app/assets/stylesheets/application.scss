@@ -45,8 +45,7 @@ html {
     letter-spacing: 2px;
     color: #444;
 
-    a {
-      color: #444;
+    .logo_site {
       display: flex;
       align-items: center;
       justify-content: center;
@@ -62,12 +61,15 @@ html {
       align-items: center;
 
       a {
+        color: #444;
         margin-right: 40px;
-      }
-      span {
-        margin-right: 40px;
-      }
+        transition: ease .3s;
 
+        &:hover {
+          color: $orange;
+          transition: ease .3s;
+        }
+      }
       input, button {
         border:none;
         font: $fontText;
