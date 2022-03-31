@@ -125,7 +125,9 @@ html {
 
         h1 {
           text-align: center;
-          margin-bottom: 20px;
+        }
+        h2 {
+          font-family: 'Roboto Mono';
         }
         a {
           font-size: 16px;
@@ -137,6 +139,7 @@ html {
           cursor: pointer;
           letter-spacing: 1px;
           text-align: center;
+          margin-top: 20px;
         }
       }
       .header_logs {
@@ -655,6 +658,124 @@ html {
             }
           }
 
+        }
+      }
+      .form_chara {
+        h3 {
+
+          font-family: 'Poppins';
+          font-size: 3rem;
+          font-weight: 900;
+          font-style: italic;
+          color: $rose;
+          display: flex;
+          align-items: center;
+          width:100%;
+          margin-bottom: 40px;
+
+          &::first-letter {
+            color: $orange;
+          }
+
+          &::after {
+            height: 2px;
+            background-color: $orange;
+            flex:1;
+            content:"";
+            margin-left: 60px;
+          }
+        }
+        label {
+          font-family: Roboto Mono;
+        }
+        .form-group  {
+          display:flex;
+          flex-direction: column;
+          align-items: flex-start;
+          justify-content: space-between;
+
+          input, textarea, select {
+            border: none;
+            background-color: #fff;
+            border: 1px solid #eee;
+            margin: 10px 0 20px  ;
+            padding: 3px 10px;
+            font-family: Poppins;
+            border-radius: 5px;
+            width: 100%;
+          }
+        }
+        .form_general {
+          display:flex;
+
+          div {
+            flex:1;
+
+            &.form_mid {
+              margin: 0 80px;
+            }
+          }
+        }
+        .form_more {
+          width: 100%;
+          display:flex;
+          margin: 40px 0;
+
+          div {
+            flex:1;
+            &:nth-child(1) {
+              margin-right: 40px;
+            }
+            &:nth-child(2) {
+              margin-left: 40px;
+            }
+          }
+        }
+        .d-flex.flex-row.justify-content-between.align-items-center {
+          display: flex;
+          align-items: center;
+          margin-bottom: 40px;
+        }
+      }
+      .form_submit {
+        display:flex;
+        align-items:center;
+        justify-content:center;
+
+        input {
+          border:none;
+          font-size: 16px;
+          font-family: 'Poppins';
+          padding: 5px 20px;
+          border-radius: 20px;
+          background: $orange;
+          color:$blanc;
+          cursor: pointer;
+          letter-spacing: 1px;
+          text-align: center;
+        }
+      }
+    }
+    .edit_links {
+      display: flex;
+      justify-content:center;
+      margin-top: 40px;
+
+      a {
+        border:none;
+        font-size: 16px;
+        font-family: 'Poppins';
+        padding: 5px 20px;
+        border-radius: 20px;
+        background: $violet;
+        color:$blanc;
+        cursor: pointer;
+        letter-spacing: 1px;
+        text-align: center;
+
+        &:nth-child(2) {
+          background-color: $bleu;
+          margin-left: 40px;
         }
       }
     }

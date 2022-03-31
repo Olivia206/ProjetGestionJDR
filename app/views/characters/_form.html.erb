@@ -3,28 +3,40 @@
   <%= f.error_notification %>
   <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
 
-  <div class="form-inputs">
-    <%= f.input :prenom %>
-    <%= f.input :nom %>
-    <%= f.input :surnom %>
-    <%= f.input :avatar %>
-    <%= f.input :hero %>
-    <%= f.input :age %>
-    <%= f.input :sexe %>
-    <%= f.input :monde %>
-    <%= f.input :race %>
-    <%= f.input :origine %>
-    <%= f.input :classe %>
-    <%= f.input :pv %>
-    <%= f.input :pm %>
-    <%= f.input :destin %>
+  <div class="form_chara">
+    <h3>Informations générales</h3>
+    <div class="form_general">
+      <div class="form_left">
+        <%= f.input :prenom %>
+        <%= f.input :nom %>
+        <%= f.input :surnom %>
+        <%= f.input :age %>
+        <%= f.input :sexe %>
+      </div>
+      <div class="form_mid">
+        <%= f.input :race %>
+        <%= f.input :classe %>
+        <%= f.input :monde %>
+        <%= f.input :origine %>
+      </div>
+      <div class="form_right">
+        <%= f.input :pv %>
+        <%= f.input :pm %>
+        <%= f.input :destin %>
+        <%= f.input :avatar %>
+        <%= f.input :hero %>
+      </div>
+    </div>
+    <h3>Précisions</h3>
     <%= f.input :histoire %>
-    <%= f.input :competences %>
-    <%= f.input :inventaire %>
+    <div class="form_more">
+      <%= f.input :competences %>
+      <%= f.input :inventaire %>
+    </div>
     <%= f.input :published_at %>
   </div>
 
-  <div class="form-actions">
+  <div class="form_submit">
     <%= f.button :submit %>
   </div>
 <% end %>

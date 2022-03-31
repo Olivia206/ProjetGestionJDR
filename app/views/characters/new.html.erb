@@ -1,5 +1,16 @@
-<h1>New Character</h1>
+<header class="header_perso">
+  <div class="header_illustration">
+    <%= image_tag 'fond_png.png', alt: 'bannière du site' %>
+  </div>
+  <div class="header_profile header_btn">
+    <h1>Nouvelle fiche</h1>
+    <h2>Ajouter un personnage</h2>
+    <%= link_to 'Retour à la liste des personnages', characters_path %>
+  </div>
+</header>
 
-<%= render 'form', character: @character %>
+<div id="main">
 
-<%= link_to 'Back', characters_path %>
+  <%= render 'form', character: @character %>
+
+</div>

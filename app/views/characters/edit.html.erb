@@ -1,6 +1,18 @@
-<h1>Editing Character</h1>
+<header class="header_perso">
+  <div class="header_illustration">
+    <%= image_tag 'fond_png.png', alt: 'bannière du site' %>
+  </div>
+  <div class="header_profile header_btn">
+    <h1>Editer une fiche</h1>
+    <h2>Changer les informations</h2>
+    <%= link_to 'Retour à la liste des personnages', characters_path %>
+  </div>
+</header>
 
-<%= render 'form', character: @character %>
-
-<%= link_to 'Show', @character %> |
-<%= link_to 'Back', characters_path %>
+<div id="main">
+  <%= render 'form', character: @character %>
+  <div class="edit_links">
+    <%= link_to 'Show', @character %>
+    <%= link_to 'Back', characters_path %>
+  </div>
+</div>
