@@ -20,10 +20,12 @@
           <%= link_to character.prenom, character %>
           Originaire de <%= character.monde %>
         </div>
-        <div class="chara_actions">
-          <%= link_to 'Editer', edit_character_path(character) %>
-          <%= link_to 'Supprimer', character, method: :delete, data: { confirm: 'Es-tu sûr.e de vouloir supprimer cette fiche ?' } %>
-        </div>
+        <% if current_user == character.user %>
+          <div class="chara_actions">
+            <%= link_to 'Editer', edit_character_path(character) %>
+            <%= link_to 'Supprimer', character, method: :delete, data: { confirm: 'Es-tu sûr.e de vouloir supprimer cette fiche ?' } %>
+          </div>
+        <% end %>
       </div>
     <% end %>
 
