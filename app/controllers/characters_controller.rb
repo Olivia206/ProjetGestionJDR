@@ -1,4 +1,5 @@
 class CharactersController < ApplicationController
+
   before_action :set_character, only: %i[ show edit update destroy ]
 
   # GET /characters or /characters.json
@@ -65,6 +66,6 @@ class CharactersController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def character_params
-      params.require(:character).permit(:prenom, :nom, :surnom, :avatar, :hero, :age, :sexe, :monde, :race, :origine, :classe, :pv, :pm, :destin, :histoire, :competences, :inventaire, :published_at)
+      params.require(:character).permit(:prenom, :nom, :surnom, :avatar, :hero, :age, :sexe, :monde, :race, :origine, :classe, :pv, :pm, :destin, :histoire, :competences, :inventaire, :published_at, :user_id)
     end
 end

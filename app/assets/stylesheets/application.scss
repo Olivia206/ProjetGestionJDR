@@ -288,13 +288,16 @@ html {
 
       &.header_perso {
         height: 80vh;
+        display:flex;
+        align-items:center;
 
-        .header_profile {
+        .header_profile, .header_chara {
           display:flex;
           align-items: flex-start;
-          justify-content: space-between;
+          justify-content: center;
           flex-direction:column;
           width: 80%;
+          height: calc(100% - 120px);
 
           h1 {
             position: relative;
@@ -317,17 +320,43 @@ html {
             display:flex;
             flex-direction: column;
             align-items: flex-end;
+            justify-content: center;
+            height: 100%;
+
             h2 {
               text-align: right;
             }
-              a {
-                background: $bleu;
-                color: $blanc;
-                font: $fontText;
-                padding: 5px 20px;
-                border-radius: 20px;
+            a.btn_user {
+              color: #f4f5f5;
+              font-family: 'Roboto Mono';
+              font-size: 1.5rem;
+              border: 2px solid #f4f5f5;
+              border-radius: 5px;
+              margin-bottom: 10px;
+              padding: 5px 10px;
+              text-align: center;
+              transition: ease .3s;
+              margin-left: 20px;
+
+              &:hover {
+                background: rgba(244, 245, 245, 0.2);
+                transition: ease .3s;
               }
+            }
+            a.btn_edit {
+              background: $bleu;
+              color: $blanc;
+              font: $fontText;
+              padding: 5px 20px;
+              border-radius: 20px;
+              margin-top: 40px;
+            }
           }
+        }
+        .header_chara {
+          flex-direction: row;
+          align-items:center;
+          justify-content: space-between;
         }
       }
 

@@ -15,6 +15,7 @@
     <a class="logo_site" href="/"><%= image_tag 'logo_flat.svg', alt: 'logo dé de jeu de rôle' %></a>
     <div class="nav_links">
       <%= link_to 'Membres', users_path %>
+      <%= link_to 'Créer une fiche', new_character_path %>
       <% if current_user %>
         <div class="links_connected">
           <%= link_to current_user.pseudo, current_user %>

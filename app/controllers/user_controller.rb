@@ -1,8 +1,11 @@
 class UserController < ApplicationController
+
   def index
     @user = current_user
     @user = User.find(params[:id])
     @users = User.all
+    @user.destroy
+
   end
 
   def new

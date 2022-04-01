@@ -4,8 +4,25 @@
   </div>
   <div class="header_profile">
     <h1>Fiches personnage</h1>
-    <h2>@<%=  @user.pseudo %></h2>
+    <h2>@<%= @user.pseudo %></h2>
   </div>
 </header>
 
-<div id="main"></div>
+<div id="main" class="chara_list">
+
+    <% @user.characters.each do |character| %>
+      <div class="character">
+        <div class="chara_avatar" style="background-image: url('<%= character.avatar %>')"></div>
+        <div class="chara_infos">
+          <%= link_to character.prenom, character %>
+          Originaire de <%= character.monde %>
+        </div>
+        <div class="chara_actions">
+          <% if current_user == @user %>
+            <%= link_to 'Edit', edit_character_path(character) %>
+            <%= link_to 'Destroy', character, method: :delete, data: { confirm: 'Es-tu sûr.e de vouloir supprimer cette fiche ?' } %>
+          <% end %>
+        </div>
+      </div>
+    <% end %>
+</div>
