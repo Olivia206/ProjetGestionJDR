@@ -678,7 +678,8 @@ html {
           .chara_bann {
             flex:1;
             margin-left: 20px;
-            background-image: center;
+            background-size: cover;
+            background-position: center;
             border-radius: 20px;
           }
 
