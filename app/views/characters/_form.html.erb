@@ -11,20 +11,20 @@
         <%= f.input :nom %>
         <%= f.input :surnom %>
         <%= f.input :age %>
-        <%= f.input :sexe %>
+        <%= f.input :sexe, collection: [['0', 'Féminin'], ['1', 'Masculin']], label_method: :second, value_method: :first %>
       </div>
       <div class="form_mid">
         <%= f.input :race %>
-        <%= f.input :classe %>
+        <%= f.input :classe, label: 'Classe / Occupation' %>
         <%= f.input :monde %>
         <%= f.input :origine %>
       </div>
       <div class="form_right">
         <%= f.input :pv %>
         <%= f.input :pm %>
-        <%= f.input :destin %>
+        <%= f.input :destin, label: 'Niveau' %>
         <%= f.input :avatar %>
-        <%= f.input :hero %>
+        <%= f.input :hero, label: 'Image bannière' %>
       </div>
     </div>
     <h3>Précisions</h3>

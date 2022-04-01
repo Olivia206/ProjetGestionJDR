@@ -9,20 +9,34 @@
 </header>
 
 <div id="main" class="chara_list">
+    <% if @user.characters.any? %>
+      <% @user.characters.each do |character| %>
+        <div class="character">
+          <div class="chara_avatar" style="background-image: url('<%= character.avatar %>')"></div>
+          <div class="chara_infos">
+            <%= link_to character.prenom, character %>
+            Originaire de <%= character.monde %>
+          </div>
+          <div class="chara_actions">
+            <% if current_user == @user %>
+              <%= link_to 'Editer', edit_character_path(character) %>
+              <%= link_to 'Supprimer', character, method: :delete, data: { confirm: 'Es-tu sûr.e de vouloir supprimer cette fiche ?' } %>
+            <% end %>
+          </div>
+        </div>
+      <% end %>
+    <% else %>
 
-    <% @user.characters.each do |character| %>
-      <div class="character">
-        <div class="chara_avatar" style="background-image: url('<%= character.avatar %>')"></div>
-        <div class="chara_infos">
-          <%= link_to character.prenom, character %>
-          Originaire de <%= character.monde %>
-        </div>
-        <div class="chara_actions">
-          <% if current_user == @user %>
-            <%= link_to 'Edit', edit_character_path(character) %>
-            <%= link_to 'Destroy', character, method: :delete, data: { confirm: 'Es-tu sûr.e de vouloir supprimer cette fiche ?' } %>
-          <% end %>
-        </div>
+    <% if current_user == @user %>
+      <div class="notice">
+        <p>Tu n'as pas encore créé de fiche... 😥</p>
+        <%= link_to 'Créé ta première fiche', new_character_path %>
       </div>
+      <%else%>
+        <div class="notice">
+          <p><%= @user.pseudo %> n'a pas encore créé de fiche !
+        </div>
     <% end %>
+
+  <% end %>
 </div>

@@ -82,6 +82,7 @@ html {
       .links_connected {
         display:flex;
         align-items: center;
+
         input {
           background-color: $bleu;
           margin-left: 40px;
@@ -89,10 +90,19 @@ html {
       }
       .links_notconnected {
         display:flex;
-        button {
+        a {
           background-color: $orange;
+          border:none;
+          font: $fontText;
+          padding: 5px 20px;
+          border-radius: 20px;
+          color:$blanc;
+          cursor: pointer;
+          letter-spacing: 1px;
+          text-transform: lowercase;
+          margin: 0;
         }
-        form:nth-child(1) button {
+        button {
           background-color: $rose;
           margin-right: 20px;
         }
@@ -454,6 +464,30 @@ html {
       margin-top: -60px;
       padding: 60px;
 
+      .notice {
+        text-align: center;
+        width: 100%;
+        margin: 40px;
+
+        p {
+          background: rgba(234,117,74, .4);
+          margin: auto;
+          padding: 20px;
+          border-radius: 20px;
+          margin-bottom: 40px;
+        }
+        a {
+          border:none;
+          font: $fontText;
+          padding: 5px 20px;
+          border-radius: 20px;
+          color:$blanc;
+          cursor: pointer;
+          letter-spacing: 1px;
+          background: $rose;
+        }
+      }
+
       section {
 
         h3 {
@@ -492,44 +526,95 @@ html {
             border-radius: 20px;
             border: 20px solid $blanc;
             background: $blanc;
+            position:relative;
+            display:flex;
+            flex-direction: column;
+            align-items: center;
 
             img {
               border-radius: 20px;
               max-width: 400px;
+            }
+
+            .level {
+              position:absolute;
+              bottom: 3vw;
+              background:$orange;
+              height:6vw;
+              width: 6vw;
+              display:flex;
+              align-items:center;
+              justify-content:center;
+              position: relative;
+              border-radius: 100%;
+              border: 5px solid $blanc;
+
+              &::before {
+                content:"";
+                height: 60%;
+                width: 60%;
+                border: 2px solid $blanc;
+                border-radius: 5px;
+                transform: rotate(45deg);
+                position:absolute;
+              }
+              span {
+                height: 60%;
+                width: 60%;
+                border: 2px solid $blanc;
+                border-radius: 5px;
+                color: $blanc;
+                font-family: 'Roboto Mono';
+                display:flex;
+                align-items:center;
+                justify-content:center;
+              }
             }
           }
         }
         .chara_stats {
           display:flex;
           align-items: center;
-          justify-content: space-around;
-          margin: 40px 0;
+          justify-content: flex-start;
+          margin-top:40px;
+          width: 60%;
 
-          b {
-            font-family: 'Roboto Mono';
-            font-size: 3rem;
-            color: $orange;
-            position:relative;
+          .stat {
+            flex:1;
 
-            &::before {
+            b {
               content:"PV";
               color: $marron;
               opacity: .4;
-              position: absolute;
-              right: -20px;
-              top: -20px;
               font-weight: 900;
               font-family: Poppins;
-              font-size: 2rem;
+              font-size: 1.5rem;
               letter-spacing: 3px;
+              font-style: italic;
+            }
+            .stat_bar {
+              width: 100%;
+              background: #DDD;
+              border-radius: 10px;
+              border: 2px solid #DDD;
+              display:flex;
+              align-items:center;
+
+              .stat_bar_fill {
+                height: 8px;
+                border-radius: 8px;
+                background:linear-gradient(142deg, $rose 0%, $orange 28%, $violet 100%);
+              }
+            }
+            &.pm {
+              margin-left: 40px;
+
+              .stat_bar_fill {
+                background:linear-gradient(142deg, $violet 0%, $marron 28%, $bleu 100%);
+              }
             }
           }
-          .pv b::before {
-              content: "PM";
-            }
-          .des b::before {
-              content:"DESTIN";
-            }
+
         }
         .chara_about {
           display:flex;
@@ -544,6 +629,7 @@ html {
           }
           .chara_histoire {
             margin-right: 20px;
+
             h3::after {
               content:"";
               margin-left: 20px;
@@ -566,6 +652,7 @@ html {
           display: flex;
           align-items: center;
           width:100%;
+          margin-bottom: 40px;
 
           &::first-letter {
             color: $orange;
@@ -691,7 +778,6 @@ html {
       }
       .form_chara {
         h3 {
-
           font-family: 'Poppins';
           font-size: 3rem;
           font-weight: 900;
@@ -764,6 +850,17 @@ html {
           display: flex;
           align-items: center;
           margin-bottom: 40px;
+        }
+        .character_histoire, .form_more {
+          textarea {
+            min-height: 250px;
+          }
+          label {
+            background: $orange;
+            color: $blanc;
+            border-radius: 5px;
+            padding: 5px 10px;
+          }
         }
       }
       .form_submit {

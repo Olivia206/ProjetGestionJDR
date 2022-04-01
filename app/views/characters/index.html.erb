@@ -5,23 +5,32 @@
   <div class="header_profile header_btn">
     <h1>Liste des personnages</h1>
     <%= link_to 'New Character', new_character_path %>
-    <p id="notice"><%= notice %></p>
+
   </div>
 </header>
 
 <div id="main" class="chara_list">
 
-  <% @characters.each do |character| %>
-    <div class="character">
-      <div class="chara_avatar" style="background-image: url('<%= character.avatar %>')"></div>
-      <div class="chara_infos">
-        <%= link_to character.prenom, character %>
-        Originaire de <%= character.monde %>
+  <% if @characters.any? %>
+
+    <% @characters.each do |character| %>
+      <div class="character">
+        <div class="chara_avatar" style="background-image: url('<%= character.avatar %>')"></div>
+        <div class="chara_infos">
+          <%= link_to character.prenom, character %>
+          Originaire de <%= character.monde %>
+        </div>
+        <div class="chara_actions">
+          <%= link_to 'Editer', edit_character_path(character) %>
+          <%= link_to 'Supprimer', character, method: :delete, data: { confirm: 'Es-tu sûr.e de vouloir supprimer cette fiche ?' } %>
+        </div>
       </div>
-      <div class="chara_actions">
-        <%= link_to 'Edit', edit_character_path(character) %>
-        <%= link_to 'Destroy', character, method: :delete, data: { confirm: 'Es-tu sûr.e de vouloir supprimer cette fiche ?' } %>
+    <% end %>
+
+    <% else %>
+      <div class="notice">
+        <p>Il n'y a aucun personnage créé pour le moment !</p>
+        <%= link_to 'Inscrit-toi pour créer des fiches', new_user_registration_path %>
       </div>
-    </div>
   <% end %>
 </div>

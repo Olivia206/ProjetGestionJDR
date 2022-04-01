@@ -28,16 +28,29 @@
         <span><b>Monde :</b> <%= @character.monde %></span>
         <span><b>Origine :</b> <%= @character.origine %></span>
         <span><b>Classe / métier :</b> <%= @character.classe %></span>
+
+        <div class="chara_stats">
+
+          <div class="stat pv">
+            <b>PV</b>
+            <div class="stat_bar">
+              <div class="stat_bar_fill" style="width: <%= @character.pv %>%;"></div>
+            </div>
+          </div>
+          <div class="stat pm">
+          <b>PM/Autre</b>
+            <div class="stat_bar">
+              <div class="stat_bar_fill" style="width: <%= @character.pm %>%;"></div>
+            </div>
+          </div>
+        </div>
       </div>
       <div class="chara_avatar">
         <img src="<%= @character.avatar %>">
+        <div class="level" title="Niveau"><span><%= @character.destin %></span></div>
       </div>
     </div>
-    <div class="chara_stats">
-      <div class="pv"><b><%= @character.pv %></b></div>
-      <div class="pm"><b><%= @character.pm %></b></div>
-      <div class="des"><b><%= @character.destin %></b></div>
-    </div>
+
     <div class="chara_about">
 
       <div class="chara_histoire">
