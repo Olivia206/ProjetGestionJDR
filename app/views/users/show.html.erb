@@ -10,7 +10,7 @@
 
 <div id="main" class="chara_list">
     <% if @user.characters.any? %>
-      <% @user.characters.each do |character| %>
+      <% @user.characters.sort_by(&:prenom).each do |character| %>
         <div class="character">
           <div class="chara_avatar" style="background-image: url('<%= character.avatar %>')"></div>
           <div class="chara_infos">
